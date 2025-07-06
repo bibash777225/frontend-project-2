@@ -22,8 +22,8 @@ const store = configureStore({
 export default store 
 // dispacth ko type--. paxi kam lagxa
 // dispatch
-  export type AppDispacth=typeof store.dispatch
-
+  export type AppDispacth=typeof store.dispatch//useDispatch laii type dina chayenxa
+export type Rootstate=ReturnType<typeof store.getState>
 
 // let name =bibash
 //type of name   u garda yesley string dinxa type 

@@ -1,5 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IUserInitialState } from "./type";
+import axios from "axios";
+import API from "../../../http";
 
 const userInitialState: IUserInitialState = {
     name: null,
@@ -21,7 +23,7 @@ const userSlice = createSlice({
         },
 
         setAddress(state: IUserInitialState, action: PayloadAction<string>) {
-            state. address = action.payload
+            state.address = action.payload
         },
         sethaha(state, action) {
 
@@ -31,7 +33,7 @@ const userSlice = createSlice({
 
 
 //action
-const { setName, setAddress, sethaha }=userSlice.actions
+const { setName, setAddress, sethaha } = userSlice.actions
 export default userSlice.reducer
 export { setName, setAddress, sethaha }
 /*
@@ -40,23 +42,6 @@ const [age,setAge]
 const [address,setAddress]= useState()
 
 reducers --> kunai function jasko through bata hami kehi programmed 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 
@@ -74,3 +59,72 @@ payementSlice.ts
  } kei kura lai set garnu xa vaney agaadi set lakney ani K LAI SET GARNEY THYOU LEKNEY setName 
   reducer function mah jahiley diwuta kura ayunxa ayeuta  action rah state sadhaii reducer vanudha u dieuta ayunxa ayunxa  
 */
+
+
+
+
+
+//register user
+
+function registerUser() {
+    return async function registerUserThunk() {
+
+        try {const response = await axios API.post("user/register")
+        if (response.status == 200) {
+        }
+        else {
+
+        }
+
+    }
+
+
+} catch (error) {
+    console.log(error)
+}
+      
+
+}
+
+
+
+//login user 
+function loginUser() {
+    return async function loginUserThunk() {
+        try {
+            const response = await axios.post("user/login")
+            if (response.status == 200) {
+            }
+            else {
+
+            }
+
+        }
+}catch (error) {
+        console.log(error)
+    }
+
+
+}
+
+
+// forget password
+function forgetPassword() {
+
+    try {
+        return async function forgetPasswordThunk() {
+            const response = await axios.post("user/forget-password")
+            if (response.status == 200) {
+                dispatch(setName(response.data.dataname))
+            }
+            else {
+
+            }
+
+        }
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+
