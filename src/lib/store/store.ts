@@ -1,11 +1,13 @@
  //j tati slice xaaa jamaii slice laii collect 
 
 import { configureStore } from "@reduxjs/toolkit";
-import {userSlice,teacherSlice,studentSlice}
+import userSlice from "./userSlice"
+import teacherSlice from "./teacherSlice"
+import studentSlice from "./studentSlice"
 
 //  collect all slices and store 
   
-const store=configureStore({
+const store = configureStore({
 
 
     reducer:{
