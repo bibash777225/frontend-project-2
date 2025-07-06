@@ -1,29 +1,41 @@
  import { createSlice } from "@reduxjs/toolkit";  
+
    
-   
-   createSlice({
+    
+
+ 
+ const teacherSlice=  createSlice({
       name:"teacherrSlice",
     initialState:{
-        teacherName:"",
-        teacherPassword:"",
-
+        teacherName:"abcd",
+        teacherPassword:"akljdkfjkf"
     },
+
     reducers:{
 
-        setTeacherName(sate,action){
-           state.teacherName ="bibash"
+        setTeacherName(state,action){
+           state.teacherName = "bbasdh"    //"bibash"
         },
 
         setTeacherPassword(state,action){
-            state.teacherPassword="HELLO"
+            state.teacherPassword="hi"         //"HELLO"
         }
     }
    
     })
 // const setTeacherName = teacherSlice.actions.setTeacherName
 // const setTeacherPasssword  = teacherSlice.actions.setTeacherPasswor
-    const{ setTeacherName,setTeacherPassword}=teacherSlice.action
-setTeacherName()
+    const{ setTeacherName,setTeacherPassword}= teacherSlice.actions
+    export default teacherSlice.reducer
+    export{setTeacherName,setTeacherPassword}
+
+
+
+
+
+
+
+   //setTeacherName()
     /* 
 
  } 
@@ -55,4 +67,4 @@ jaile pani action call huncha, reducer hune hainw
 
 
 */
-    /*
+    

@@ -1,27 +1,39 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { IUserInitialState } from "./type";
 
-createSlice({
-name:"userSlice",   // u room vanakoo jastoo voo room ko nam deko
-initialState:{
-    name:null,
-    address:null;
+const userInitialState: IUserInitialState = {
+    name: null,
+    address: null,
+}
 
-},
-     reducers :{
+
+const userSlice = createSlice({
+    name: "userSlice",   // u room vanakoo jastoo voo room ko nam deko
+    initialState: userInitialState,
+
+    reducers: {
 
         // state-->  mathi jo intial state
-        setName(sate,action){
-           
-            state.name="biabsh"
-        },
-      
-        setAdress(){
-       state.name="bahaktapur"
-        },
-     }
+        //action--. trigger garda pathuney data aunne kura 
+        setName(state: IUserInitialState, action: PayloadAction<string>) {
 
+            state.name = action.payload  //bibash
+        },
+
+        setAddress(state: IUserInitialState, action: PayloadAction<string>) {
+            state. address = action.payload
+        },
+        sethaha(state, action) {
+
+        }
+    }
 })
 
+
+//action
+const { setName, setAddress, sethaha }=userSlice.actions
+export default userSlice.reducer
+export { setName, setAddress, sethaha }
 /*
 const [name,setName] = useState(null)
 const [age,setAge]
