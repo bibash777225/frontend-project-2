@@ -79,7 +79,7 @@ function registerUser() {
     }
 
 
-} catch (error) {
+} catc (error) {
     console.log(error)
 }
       
