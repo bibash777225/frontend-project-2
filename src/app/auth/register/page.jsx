@@ -1,4 +1,4 @@
-function Page(){
+function Register(){
 
 
 
@@ -21,7 +21,7 @@ password:""
 
     }
     const handleRegisterSubmission=(e:FormEvent<HTMLFormElement>)=>{
-
+//api
     }
     return(
         <> 
@@ -72,4 +72,4 @@ password:""
         </>
     )
 }
-export default Page
+export default Register

@@ -5,6 +5,11 @@ import { Status } from "../types/type";
     password:string,
  }
  
+  export interface IRegisterData extends IUserData{
+  
+    email:string;
+   
+ }
  
  export interface IInitalState{
 

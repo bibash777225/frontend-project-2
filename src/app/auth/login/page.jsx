@@ -1,6 +1,6 @@
 function Login(){
 
-
+ const [status]=useAppSlector((store)=>store.auth.s)
       const [ data,setData]=useState<ILoginData>({
 username:"",
 email: "",
@@ -18,7 +18,13 @@ password:""
      })
 
      const handelLoginSubmision =(e:FormEvent<HTMLFormElement>){
+           loginUser(data)
+           if(status==Status.SUCCESS){
+            alert("successfuly  load")
 
+           }else if(status==Status.ERROR){
+            alert("error happend ")
+           }
      }
     return(
         <> 
